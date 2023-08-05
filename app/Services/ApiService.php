@@ -38,5 +38,11 @@ class ApiService
     public function sendPayout(string $email, float $amount)
     {
         //
+        $data = array('amount'=>$amount);
+        Mail::send(['text'=>'mail'], $data, function($message) {
+            $message->to($email, 'Paid Order')->subject
+                ('Paid Order Mail');
+            $message->from('moonahmed786@gmail.com','Ahmed Mustafa');
+        });
     }
 }

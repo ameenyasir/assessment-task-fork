@@ -19,7 +19,8 @@ class AffiliateCreated extends Mailable
      */
     public function __construct(
         public Affiliate $affiliate
-    ) {}
+    ) {
+    }
 
     /**
      * Build the message.
